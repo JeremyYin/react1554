@@ -31,7 +31,8 @@ module.exports = {
     // output property。 filename和path两个属性是必须的。
     // 几个变量[id]chunk的ID  [name]chunk的name，没有则使用ID替换 [hash]编译生命周期的hash [chunkhash]chunk的hash
     output: {
-        filename: '[name]-[hash:5].js', // 用于命名每个文件，不能制定为绝对路径，路径基于path，无法使用[id]
+        filename: '[name].js',
+        //filename: '[name]-[hash:5].js', // 用于命名每个文件，不能制定为绝对路径，路径基于path，无法使用[id]
         path: path.join(__dirname,'./dist')  // path must be absolute path
         //chunkFilename: 'chunk.js'  // 非入口的chunk的文件名，路径基于path
         //crossOriginLoading: false // 是否启用跨域加载- false/'anonymous'/'use-credentials' 后两个表明启用，在请求是否带凭据（credential）
@@ -74,7 +75,7 @@ module.exports = {
     
     // Plugin proprty's value is a list of instance of plugins;
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(), // uglify 
+        //new webpack.optimize.UglifyJsPlugin(), // uglify 
         new HtmlWebpackPlugin({
             template: './src/index.html'
         })
